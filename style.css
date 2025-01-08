@@ -47,9 +47,6 @@
 ::-webkit-scrollbar {
   display: none;
 }
-html:focus-within{
-    scroll-behavior: smooth;
-}
 /* ------------- GENERAL STYLES ------------- */
 
 * {
@@ -186,7 +183,7 @@ main .p2 .shops{
 }
 .faq-title{
   margin-right: 3rem;
-  
+  margin-top: 5px;
   font-size: 1.5rem;
 }
 .faq-text{
