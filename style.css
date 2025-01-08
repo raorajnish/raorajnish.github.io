@@ -1,16 +1,16 @@
 /* ------------- FONT STYLES ------------- */
 @font-face {
-    font-family: 'DystopiaSemirounded';
-    src: url('fonts/Dystopia-Semirounded.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "DystopiaSemirounded";
+  src: url("fonts/Dystopia-Semirounded.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'DystopiaBold';
-    src: url('fonts/Dystopia-Bold.ttf') format('truetype');
-    font-weight: normal; /* The font file itself defines the bold style */
-    font-style: normal;
+  font-family: "DystopiaBold";
+  src: url("fonts/Dystopia-Bold.ttf") format("truetype");
+  font-weight: normal; /* The font file itself defines the bold style */
+  font-style: normal;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
@@ -40,13 +40,19 @@
 
   --box-shadow: 0 2rem 3rem var(--color-light);
 
-  --font-dystopia-semi: 'DystopiaSemirounded', Arial, sans-serif;
-  --font-dystopia-bold: 'DystopiaBold', Arial, sans-serif;
+  --font-dystopia-semi: "DystopiaSemirounded", Arial, sans-serif;
+  --font-dystopia-bold: "DystopiaBold", Arial, sans-serif;
 }
+
 /* ------------- RESET SCROLLBAR ------------- */
 ::-webkit-scrollbar {
   display: none;
 }
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
 /* ------------- GENERAL STYLES ------------- */
 
 * {
@@ -58,7 +64,6 @@
   text-decoration: none;
   list-style: none;
   box-sizing: border-box;
-  /* font-family: monospace; */
 }
 
 html,
@@ -73,17 +78,20 @@ body {
   overflow-x: hidden;
   color: var(--color-dark);
 }
-a{
+
+a {
   text-decoration: none;
   color: var(--color-dark);
 }
+
 /* ------------- NAVBAR ------------- */
-.container{
+.container {
   width: 100%;
   min-height: 100vh;
   background-color: var(--color-info-light);
 }
-nav{
+
+nav {
   width: 100%;
   height: 9vh;
   background-color: white;
@@ -91,114 +99,108 @@ nav{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 5vw 0 5vw;
+  padding: 0 5vw;
   border-bottom: 2px solid #363949;
 }
-nav h2{
+
+nav h2 {
   font-size: 2rem;
 }
-.nav-part2{
+
+.nav-part2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background-color: red; */
   gap: 1rem;
 }
-.nav-part2 i{
+
+.nav-part2 i,
+.nav-part2 h3 {
   font-size: 1.5rem;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: var(--border-radius-1);
   transition: all 300ms ease;
 }
-.nav-part2 i:hover{
-  background-color: var(--color-info-light);
-}
-.nav-part2 h3{
-  font-size: 1.2rem;
-  padding: .5rem 1rem;
-  border-radius: var(--border-radius-1);
-  transition: all 300ms ease;
-}
-.nav-part2 h3:hover{
+
+.nav-part2 i:hover,
+.nav-part2 h3:hover {
   background-color: var(--color-info-light);
 }
 
 /* ------------- MAIN CONTENT ------------- */
-
 main {
   top: 1px;
   width: 100%;
   min-height: 91vh;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
 }
-main .p1{
+
+main .p1,
+main .p2 {
   min-width: 92vw;
-  margin: 1.5rem 2rem 0 ;
+  margin: 1.5rem 2rem 0;
   border-radius: var(--border-radius-2);
   padding: 4vh 5vw;
   background-color: white;
   box-shadow: var(--box-shadow);
 }
-main .p1 h1{
+
+main .p1 h1 {
   font-size: 5rem;
 }
-main .p1 p{
+
+main .p1 p {
   font-size: 1.8rem;
   margin-top: 1rem;
   font-weight: 100;
 }
 
-main .p2{
-  min-width: 92vw;
-  padding: 2vh 5vw;
-  margin: 1.5rem 2rem 0 ;
-  border-radius: var(--border-radius-2);
-  background-color: white;
-  box-shadow: var(--box-shadow);
-}
-
-main .p2 h2{
+main .p2 h2 {
   font-size: 2rem;
-  /* background-color: #111e88; */
 }
 
-main .p2 .shops{
+main .p2 .shops {
   margin-top: 1rem;
-  /* background-color: #41f1b6; */
   border-radius: var(--border-radius-1);
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.faq{
+.faq {
   background-color: rgb(205, 209, 246);
   border-radius: var(--border-radius-2);
   padding: 5px 1rem;
   position: relative;
   box-shadow: var(--box-shadow);
+  transition: all 300ms ease;
 }
-.faq-title{
+
+.faq-title {
+  margin-bottom: 5px;
   margin-right: 3rem;
-  margin-top: 5px;
   font-size: 1.5rem;
 }
-.faq-text{
+
+.faq-text {
+  width: 80vw;
   text-align: left;
-  margin: 1rem 0 1rem;
+  margin: 1rem 0;
   display: none;
- }
- .faq.active .faq-text{
+}
+
+.faq.active .faq-text {
   display: block;
   font-size: 1rem;
- }
- .toggle i{
+}
+
+.toggle i {
   font-size: 1.2rem;
- }
- .toggle{
+}
+
+.toggle {
   position: absolute;
   display: flex;
   align-items: center;
@@ -206,49 +208,125 @@ main .p2 .shops{
   font-size: 15px;
   height: 20px;
   width: 20px;
-  top: 8px;
+  top: 10px;
   right: 10px;
   background-color: #7380ec;
   color: white;
   border-radius: 50%;
-  border: none;
   cursor: pointer;
-  transition:.2s ease-in-out;
- }
- .toggle:hover{
-  transform: scale(1.09);
- }
+  transition: 0.2s ease-in-out;
+}
 
- .toggle .ri-close-fill{
+.toggle:hover {
+  transform: scale(1.09);
+}
+
+.toggle .ri-close-fill {
   display: none;
- }
-.faq.active .toggle .ri-close-fill{
+}
+
+.faq.active .toggle .ri-close-fill {
   display: block;
 }
-.faq.active .toggle .ri-arrow-drop-down-line{
+
+.faq.active .toggle .ri-arrow-drop-down-line {
   display: none;
 }
-.faq.active .toggle{
+
+.faq.active .toggle {
   background-color: red;
 }
 
-main #checkout-btn{
+main #checkout-btn {
   min-width: 200px;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  background-color:  #5f6ce0   ;
+  background-color: #5f6ce0;
   width: 20vw;
-  border: none;
   padding: 1rem 2rem;
   border-radius: var(--border-radius-2);
   cursor: pointer;
-  /* box-shadow: var(--box-shadow); */
+  transition: all 200ms ease-in-out;
 }
-main #checkout-btn:hover{
-  background-color:#5460c7 ;
+
+main #checkout-btn:hover {
+  background-color: #5460c7;
   box-shadow: none;
+  transform: scale(1.01);
 }
-main #checkout-btn a{
+
+main #checkout-btn a {
   font-size: 1.2rem;
   color: white;
+}
+
+/* ------------- RESPONSIVE STYLES ------------- */
+@media (max-width: 768px) {
+  nav {
+    position: fixed;
+    z-index: 9999;
+    top: 1px;
+    padding: 0 3vw;
+    max-width: 100vw;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  nav h2 {
+    font-size: 1.2rem;
+  }
+
+  .nav-part2 {
+    /* font-size: 1.5rem; */
+    /* background-color: red; */
+    width: 50%;
+    justify-content: flex-start;
+    /* align-items: center; */
+    gap: 14px;
+  }
+  .nav-part2 i,
+  .nav-part2 h3 {
+    font-size: 1.18rem;
+    padding: 0.3rem 0rem;
+  }
+  main{
+    padding: 8vh 0 0;
+  }
+  main .p1,
+  main .p2 {
+    min-width: 95vw;
+    padding: 3vh 3vw;
+  }
+  /* main .p1{
+    padding: 2vh 2vw;
+  } */
+
+  main .p1 h1 {
+    font-size: 3rem;
+  }
+
+  main .p1 p {
+    font-size: 1.4rem;
+  }
+
+  main .p2 h2 {
+    font-size: 1.5rem;
+  }
+
+  .faq-title {
+    font-size: 1.2rem;
+  }
+
+  .faq-text {
+    font-size: 0.9rem;
+  }
+
+  main #checkout-btn {
+    width: 60vw;
+    padding: 0.8rem 1.5rem;
+  }
+
+  main #checkout-btn a {
+    font-size: 1rem;
+  }
 }
