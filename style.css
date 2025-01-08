@@ -196,10 +196,6 @@ main .p2 .shops {
   font-size: 1rem;
 }
 
-.toggle i {
-  font-size: 1.2rem;
-}
-
 .toggle {
   position: absolute;
   display: flex;
@@ -217,6 +213,9 @@ main .p2 .shops {
   transition: 0.2s ease-in-out;
 }
 
+.toggle i {
+  font-size: 1.2rem;
+}
 .toggle:hover {
   transform: scale(1.09);
 }
@@ -314,13 +313,25 @@ main #checkout-btn a {
   }
 
   .faq-title {
-    font-size: 1.2rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 3rem;
+  font-size: 1.2rem;
   }
 
   .faq-text {
     font-size: 0.9rem;
   }
-
+.toggle {
+  position: absolute;
+  font-size: 15px;
+  height: 20px;
+  width: 20px;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
   main #checkout-btn {
     width: 60vw;
     padding: 0.8rem 1.5rem;
