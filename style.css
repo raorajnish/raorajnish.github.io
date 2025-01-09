@@ -37,6 +37,7 @@
 
   --card-padding: 1.8rem;
   --padding-1: 1.2rem;
+
   --box-shadow: 0 2rem 3rem var(--color-light);
 
   --font-dystopia-semi: "DystopiaSemirounded", Arial, sans-serif;
@@ -89,7 +90,9 @@ a {
   min-height: 100vh;
   background-color: var(--color-info-light);
 }
-
+#detail {
+  display: none;
+}
 nav {
   width: 100%;
   height: 9vh;
@@ -115,7 +118,7 @@ nav h2 {
 
 .nav-part2 i,
 .nav-part2 h3 {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   padding: 0.5rem 1rem;
   border-radius: var(--border-radius-1);
   transition: all 300ms ease;
@@ -125,7 +128,20 @@ nav h2 {
 .nav-part2 h3:hover {
   background-color: var(--color-info-light);
 }
-
+.cart-btn {
+  /* background-color: red; */
+  position: relative;
+}
+.cart-count {
+  font-size: 1rem;
+  position: absolute;
+  top: -10px;
+  right: 7px;
+  background-color: #ff5555;
+  color: white;
+  border-radius: var(--border-radius-1);
+  padding: 1px 2px;
+}
 /* ------------- MAIN CONTENT ------------- */
 main {
   top: 1px;
@@ -145,7 +161,9 @@ main .p2 {
   background-color: white;
   box-shadow: var(--box-shadow);
 }
-
+main .p1 {
+  background-color: #ffbb55a3;
+}
 main .p1 h1 {
   font-size: 5rem;
 }
@@ -184,15 +202,61 @@ main .p2 .shops {
 }
 
 .faq-text {
-  width: 80vw;
+  width: 84vw;
   text-align: left;
   margin: 1rem 0;
   display: none;
+}
+.menu-item {
+  width: 100%;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #00000028;
+  /* border-top: 1px solid #00000028; */
+  padding: 5px 0;
+}
+.menu-item:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.menu-item .dishname {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+.item-part {
+  /* background-color: #41f1b6; */
+  width: 35vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.price {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 600;
+}
+.addtocartbtn {
+  background-color: #41f1b661;
+  height: 100%;
+  padding: 5px 15px;
+  border-radius: var(--border-radius-3);
+  transition: all 300ms ease-in-out;
+}
+.addtocartbtn:hover {
+  background-color: #41f1b6;
+  color: #000;
+  /* color: #dce1eb; */
 }
 
 .faq.active .faq-text {
   display: block;
   font-size: 1rem;
+}
+
+.toggle i {
+  font-size: 1.2rem;
 }
 
 .toggle {
@@ -209,12 +273,9 @@ main .p2 .shops {
   color: white;
   border-radius: 50%;
   cursor: pointer;
-  transition: 0.2s ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 
-.toggle i {
-  font-size: 1.2rem;
-}
 .toggle:hover {
   transform: scale(1.09);
 }
@@ -238,7 +299,7 @@ main .p2 .shops {
 main #checkout-btn {
   min-width: 200px;
   margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 8rem;
   background-color: #5f6ce0;
   width: 20vw;
   padding: 1rem 2rem;
@@ -261,6 +322,7 @@ main #checkout-btn a {
 /* ------------- RESPONSIVE STYLES ------------- */
 @media (max-width: 768px) {
   nav {
+    /* background-color: #41f1b6; */
     position: fixed;
     z-index: 9999;
     top: 1px;
@@ -268,27 +330,74 @@ main #checkout-btn a {
     max-width: 100vw;
     justify-content: space-between;
     gap: 10px;
-    box-shadow: 0 2rem 3rem rgba(132, 139, 200, 0.34);
+    box-shadow: var(--box-shadow);
+  }
+  #detail {
+    display: block;
   }
 
+  .nav-part2 details {
+    position: relative;
+  }
+  .nav-part2 details summary {
+    list-style: none;
+  }
+  .nav-part2 details ul {
+    background-color: white;
+    position: absolute;
+    right: 0%;
+    top: 60px;
+    width: max-content;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+  }
+  .nav-part2 details ul li {
+    font-size: 1rem;
+    padding: 2px 5px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+  }
+  .phone-hide {
+    display: none;
+  }
   nav h2 {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 
   .nav-part2 {
     /* font-size: 1.5rem; */
     /* background-color: red; */
-    width: 50%;
-    justify-content: flex-start;
+    width: 20%;
+    justify-content: flex-end;
     /* align-items: center; */
     gap: 14px;
   }
-  .nav-part2 i,
-  .nav-part2 h3 {
-    font-size: 1.18rem;
+  .nav-part2 i {
+    font-size: 2rem;
     padding: 0.3rem 0rem;
   }
-  main{
+  .nav-part2 i:hover {
+    background-color: transparent;
+  }
+  .myorder,
+  .logout-btn {
+    display: none;
+  }
+  .cart-btn {
+    /* background-color: red; */
+    position: relative;
+  }
+  .cart-count {
+    font-size: 1rem;
+    position: absolute;
+    top: -10px;
+    right: -3px;
+    background-color: #ff5555;
+    color: white;
+    border-radius: var(--border-radius-1);
+    padding: 1px 2px;
+  }
+  main {
     padding: 8vh 0 0;
   }
   main .p1,
@@ -313,28 +422,56 @@ main #checkout-btn a {
   }
 
   .faq-title {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  margin-right: 3rem;
-  font-size: 1.2rem;
+    font-size: 1.2rem;
   }
 
   .faq-text {
     font-size: 0.9rem;
   }
-.toggle {
-  position: absolute;
-  font-size: 15px;
-  height: 20px;
-  width: 20px;
-  top: 5px;
-  right: 5px;
-  cursor: pointer;
-  transition: all 200ms ease-in-out;
-}
+  .menu-item {
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #00000028;
+    /* border-top: 1px solid #00000028; */
+    padding: 5px 0;
+  }
+  .menu-item:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  .menu-item .dishname {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1rem;
+    font-weight: 900;
+  }
+  .item-part {
+    /* background-color: #41f1b6; */
+    /* width: 35vw; */
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .price {
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 600;
+    color: #0c573e;
+  }
+  .addtocartbtn {
+    font-weight: bold;
+    margin-top: 5px;
+    color: #272833;
+    /* background-color: #41f1b6; */
+    background-color: #edc394;
+    /* color: #000; */
+    height: 100%;
+    padding: 3px 15px;
+    border-radius: var(--border-radius-1);
+  }
+
   main #checkout-btn {
-    width: 60vw;
-    padding: 0.8rem 1.5rem;
+    padding: 0.8rem 0.1rem;
   }
 
   main #checkout-btn a {
