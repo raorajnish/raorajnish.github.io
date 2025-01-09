@@ -236,11 +236,15 @@ main .p2 .shops {
   width: 100%;
   /* background-color: red; */
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   border-bottom: 1px solid #00000028;
   /* border-top: 1px solid #00000028; */
   padding: 5px 0;
+}
+.menu-item:first-child {
+/*   padding-bottom: 0; */
+  border-top: 1px solid #00000028;
 }
 .menu-item:last-child {
   padding-bottom: 0;
