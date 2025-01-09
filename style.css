@@ -166,7 +166,7 @@ main .p1 {
   background-position: 50% 75%;
   background-blend-mode: multiply; */
 
-  background-color: blue;
+  background-color: red;
 }
 main .p1 h1 {
   /* opacity: 80%; */
@@ -220,7 +220,8 @@ main .p2 .shops {
 }
 
 .faq-title {
-/*   margin-bottom: 5px; */
+  margin-top: 5px;
+  margin-bottom: 5px;
   margin-right: 3rem;
   font-size: 1.5rem;
 }
