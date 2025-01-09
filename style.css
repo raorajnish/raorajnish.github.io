@@ -336,7 +336,6 @@ main #checkout-btn {
 }
 
 main #checkout-btn:hover {
-  background-color: #5460c7;
   box-shadow: none;
   transform: scale(1.01);
 }
