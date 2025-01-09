@@ -222,7 +222,7 @@ main .p2 .shops {
 }
 .menu-item .dishname {
   font-family: "Courier New", Courier, monospace;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 900;
 }
 .item-part {
@@ -234,7 +234,7 @@ main .p2 .shops {
 }
 .price {
   font-family: "Courier New", Courier, monospace;
-  font-weight: 600;
+  font-weight: 900;
 }
 .addtocartbtn {
   background-color: #41f1b661;
