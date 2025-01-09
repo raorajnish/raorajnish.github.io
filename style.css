@@ -166,7 +166,7 @@ main .p1 {
   background-position: 50% 75%;
   background-blend-mode: multiply; */
 
-  background-color: #DD7834;
+  background-color: blue;
 }
 main .p1 h1 {
   /* opacity: 80%; */
@@ -213,14 +213,14 @@ main .p2 .shops {
 .faq {
   background-color: rgb(205, 209, 246);
   border-radius: var(--border-radius-1);
-  padding: 7px 1rem;
+  padding: 10px 1rem;
   position: relative;
   box-shadow: var(--box-shadow);
   transition: all 300ms ease;
 }
 
 .faq-title {
-  margin-bottom: 5px;
+/*   margin-bottom: 5px; */
   margin-right: 3rem;
   font-size: 1.5rem;
 }
