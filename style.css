@@ -161,16 +161,41 @@ main .p2 {
   box-shadow: var(--box-shadow);
 }
 main .p1 {
-  background-color: #ffbb55a3;
+  /* background: url(https://i.pinimg.com/736x/c2/0f/29/c20f29f584c2d6ed1482dadc9a294b04.jpg);
+  background-size: cover;
+  background-position: 50% 75%;
+  background-blend-mode: multiply; */
+
+  background-color: #DD7834;
 }
 main .p1 h1 {
+  /* opacity: 80%; */
   font-size: 5rem;
+  color: white;
+  color: var(--color-info-light);
+  /* font-style: italic; */
+  /* text-transform: uppercase; */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+main .p1 h1 span {
+  /* opacity: 80%; */
+  font-size: 3.17rem;
+  color: white;
+  color: var(--color-info-light);
+  font-style: italic; 
+  text-transform: uppercase; 
+
+
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+
 }
 
 main .p1 p {
+  color: white;
   font-size: 1.8rem;
   margin-top: 1rem;
   font-weight: 100;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); 
 }
 
 main .p2 h2 {
@@ -187,8 +212,8 @@ main .p2 .shops {
 
 .faq {
   background-color: rgb(205, 209, 246);
-  border-radius: var(--border-radius-2);
-  padding: 5px 1rem;
+  border-radius: var(--border-radius-1);
+  padding: 7px 1rem;
   position: relative;
   box-shadow: var(--box-shadow);
   transition: all 300ms ease;
@@ -201,7 +226,7 @@ main .p2 .shops {
 }
 
 .faq-text {
-  width: 84vw;
+  width: 81vw;
   text-align: left;
   margin: 1rem 0;
   display: none;
@@ -222,7 +247,7 @@ main .p2 .shops {
 }
 .menu-item .dishname {
   font-family: "Courier New", Courier, monospace;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 900;
 }
 .item-part {
@@ -234,7 +259,7 @@ main .p2 .shops {
 }
 .price {
   font-family: "Courier New", Courier, monospace;
-  font-weight: 900;
+  font-weight: 600;
 }
 .addtocartbtn {
   background-color: #41f1b661;
@@ -255,7 +280,7 @@ main .p2 .shops {
 }
 
 .toggle i {
-  font-size: 1.2rem;
+  font-size: 1.9rem;
 }
 
 .toggle {
@@ -263,7 +288,7 @@ main .p2 .shops {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
+  /* font-size: 30px; */
   height: 20px;
   width: 20px;
   top: 10px;
@@ -356,7 +381,7 @@ main #checkout-btn a {
     border-bottom: 1px solid #ddd;
     cursor: pointer;
   }
-  .nav-part2 details ul li a h3{
+  .nav-part2 details ul li a h3 {
     font-size: 1.3rem;
   }
   .phone-hide {
@@ -422,7 +447,8 @@ main #checkout-btn a {
   main .p2 h2 {
     font-size: 1.5rem;
   }
-  .faq{
+  .faq {
+    padding-top: 3px;
     padding-bottom: 5px;
   }
   .faq-title {
@@ -474,17 +500,19 @@ main #checkout-btn a {
     padding: 3px 15px;
     border-radius: var(--border-radius-1);
   }
-  .addtocartbtn:hover{
+  .addtocartbtn:hover {
     background-color: #ecb16e;
   }
   .toggle {
-  
-  font-size: 15px;
-  height: 20px;
-  width: 20px;
-  top: 5px;
-  right: 8px;
-  
+    font-size: 15px;
+    height: 20px;
+    width: 20px;
+    top: 8px;
+    right: 8px;
+    padding: 10px 10px;
+  }
+  .toggle i {
+  font-size: 1.4rem;
 }
   main #checkout-btn {
     padding: 0.8rem 0.1rem;
