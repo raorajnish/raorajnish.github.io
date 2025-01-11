@@ -80,15 +80,15 @@ a {
 nav {
   width: 100%;
   height: 9vh;
-  background-color: #DD7834;
+  background-color: #dd7834;
   color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 5vw;
-  border-top: 2px solid #000;
-  border-bottom: 2px solid #000;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  /* border-top: 2px solid #000; */
+  border-bottom: 1px solid #000;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 nav h2 {
@@ -111,7 +111,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 }
 
 main .p1,
@@ -124,29 +123,29 @@ main .p2 {
   box-shadow: var(--box-shadow);
 }
 main .p1 {
-  background-color: #DD7834;
-  box-shadow:  4px .3em .3rem rgba(0,0,0,0.5), inset 4px .3em .3rem rgba(0,0,0,0.5);
+  background-color: #dd7834;
+  box-shadow: 4px 0.3em 0.3rem rgba(0, 0, 0, 0.5),
+    inset 4px 0.3em 0.3rem rgba(0, 0, 0, 0.5);
   position: relative;
   z-index: 0;
 }
-  main .p1 .p1-img{
-    width: 250px;
-    z-index: 1;
-    position: absolute;
-    top: -20px;
-    right: 20px;
-  }
-  main .p1 h1 {
-    position: relative;
-    z-index: 2;
-    font-size: 3rem;
-  }
-  main .p1 h1 span {
-    z-index: 2;
-    font-size: 3rem;
-  }
+main .p1 .p1-img {
+  width: 250px;
+  z-index: 1;
+  position: absolute;
+  top: -20px;
+  right: 20px;
+}
 main .p1 h1 {
- 
+  position: relative;
+  z-index: 2;
+  font-size: 3rem;
+}
+main .p1 h1 span {
+  z-index: 2;
+  font-size: 3rem;
+}
+main .p1 h1 {
   font-size: 5rem;
   color: white;
   color: var(--color-info-light);
@@ -154,16 +153,13 @@ main .p1 h1 {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
 main .p1 h1 span {
-  
   font-size: 3.17rem;
   color: white;
   color: var(--color-info-light);
-  font-style: italic; 
-  text-transform: uppercase; 
+  font-style: italic;
+  text-transform: uppercase;
 
-
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
-
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 main .p1 p {
@@ -171,17 +167,20 @@ main .p1 p {
   font-size: 1.8rem;
   margin-top: 1rem;
   font-weight: 100;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); 
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 }
-main .p2{
+main .p2 {
   background-color: #e39664;
-    color: white;
-    box-shadow: 0 .2em .2rem rgba(0,0,0,0.5);
+  color: white;
+  box-shadow: 0 0.2em 0.2rem rgba(0, 0, 0, 0.5);
 }
 main .p2 h2 {
-  font-size: 2rem;
+  padding-bottom: .5rem;
+  margin-bottom: .3rem;
   color: white;
-  text-shadow: 2px 2px 3px rgba(0,0,0,0.9); 
+  border-bottom: 1px solid white;
+  font-size: 2rem;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.9);
 }
 
 main .p2 .shops {
@@ -190,14 +189,13 @@ main .p2 .shops {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  
+  margin-bottom: 4vh;
 }
 
 main .p2 .shops .faq {
   background-color: white;
   color: #593823;
-  box-shadow: 0 .2em .2rem rgba(0,0,0,0.5);
-
+  box-shadow: 0 0.2em 0.2rem rgba(0, 0, 0, 0.5);
 }
 
 .faq {
@@ -206,7 +204,6 @@ main .p2 .shops .faq {
   position: relative;
   /* box-shadow: var(--box-shadow); */
   transition: all 300ms ease;
-  
 }
 
 .faq-title {
@@ -221,7 +218,6 @@ main .p2 .shops .faq {
   text-align: left;
   margin: 1rem 0;
   display: none;
-  
 }
 .menu-item {
   width: 100%;
@@ -232,11 +228,10 @@ main .p2 .shops .faq {
   border-bottom: 1px solid #00000028;
   /* border-top: 1px solid #00000028; */
   padding: 5px 0;
-  
 }
 .menu-item:first-child {
   border-top: 1px solid #33201455;
-  }
+}
 .menu-item:last-child {
   padding-bottom: 0;
   border-bottom: none;
@@ -261,15 +256,15 @@ main .p2 .shops .faq {
 }
 .addtocartbtn {
   font-weight: bold;
-    margin-top: 5px;
-    /* color: #272833; */
-    /* background-color: #41f1b6; */
-    background-color: #ecb16e;
-    color: #000;
-    height: 100%;
-    padding: 3px 15px;
-    box-shadow: 0 .2em .2rem rgba(0,0,0,0.5);
-    border-radius: var(--border-radius-1);
+  margin-top: 5px;
+  /* color: #272833; */
+  /* background-color: #41f1b6; */
+  background-color: #ecb16e;
+  color: #000;
+  height: 100%;
+  padding: 3px 15px;
+  box-shadow: 0 0.2em 0.2rem rgba(0, 0, 0, 0.5);
+  border-radius: var(--border-radius-1);
 }
 
 .faq.active .faq-text {
@@ -317,18 +312,58 @@ main .p2 .shops .faq {
 .faq.active .toggle {
   background-color: red;
 }
+/* ============= USER FORM CSS ============== */
 
- 
+.user-details-form{
+  width: 100%;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .5rem;
+}
+.user-details-form h2{
+  padding-bottom: .5rem;
+  width: 100%;
+  margin-bottom: .3rem;
+  color: white;
+  border-bottom: 1px solid white;
+}
 
-footer{
+.user-details-form .form-group{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+}
+.user-details-form .form-group label{
+  font-size: 1.4rem;
+  color: white;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.9);
+}
+.user-details-form .form-group input{
+  padding: 10px;
+  width: 100%;
+  border-radius: var(--border-radius-1);
+  border: 1px solid #b55156;
+  box-shadow:inset .2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.5);
+  /* text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.9); */
+}
+.user-details-form .form-group input:active{
+  
+  border: 1px solid #b55156;
+}
+
+/* ========== FOOTER CSS =========== */
+footer {
   /* position: relative; */
-  margin-top: 5vh;
+  margin-top: 10vh;
   margin-bottom: 2vh;
   text-align: center;
 }
 #checkout-btn {
-  position:fixed;
-  bottom: 0;
+  position: fixed;
+  bottom: -77px;
   right: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -337,7 +372,7 @@ footer{
   margin-top: 2rem;
   margin-bottom: 8rem;
   background-color: #e17277;
-  box-shadow: 0 .3em .3rem rgba(0,0,0,0.5);
+  box-shadow: 0 0.3em 0.3rem rgba(0, 0, 0, 0.5);
   width: 20vw;
   padding: 1rem 2rem;
   border-radius: var(--border-radius-2);
@@ -347,24 +382,23 @@ footer{
 
 #checkout-btn:hover {
   background-color: #b55156;
-  box-shadow: inset 0 .2em .2rem rgba(0,0,0,0.5);
+  box-shadow: inset 0 0.2em 0.3rem rgba(0, 0, 0, 0.5);
 }
 
 #checkout-btn a {
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   font-size: 1.2rem;
   color: white;
-  /* position: relative; */
+  
 }
-#checkout-btn a span{
-  /* position: absolute; */
+#checkout-btn a span {
+  
   padding: 2px 8px;
-  color: rgb(229, 207, 207);
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.9);
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
 }
 
 /* ================ RESPONSIVE STYLES ================ */
-
 
 @media (max-width: 768px) {
   nav {
@@ -396,18 +430,26 @@ footer{
     top: 40px;
     width: max-content;
     border-radius: 10px;
-    box-shadow: 0 .2em .2rem rgba(0,0,0,0.5);
+    box-shadow: 0 0.2em 0.2rem rgba(0, 0, 0, 0.5);
     text-shadow: none;
+    padding: 5px 5px;
   }
   .nav-part2 details ul li {
-    font-size: 2rem;
-    padding: 6px 10px;
+    font-size: 1.5rem;
+    padding: 6px 6px;
     /* border-bottom: 1px solid #3f1717; */
     cursor: pointer;
     text-shadow: none;
+    border-radius: 5px 5px 0 0 ;
+    border-bottom: 1px solid #3f171725;
   }
-  .nav-part2 details ul li:hover{
-    background-color: #59ae92;
+  .nav-part2 details ul li:last-child{
+    border-bottom: none;
+    border-radius: 0px 0px 5px 5px ;
+  }
+  
+  .nav-part2 details ul li:hover {
+    background-color: #59ae9234;
   }
   main {
     padding: 8.5vh 0 0;
@@ -417,12 +459,12 @@ footer{
     min-width: 95vw;
     padding: 3vh 4vw;
   }
-  main .p1{
+  main .p1 {
     background-color: #d03941;
     position: relative;
     z-index: 0;
   }
-  main .p1 .p1-img{
+  main .p1 .p1-img {
     width: 200px;
     z-index: 1;
     position: absolute;
@@ -441,21 +483,21 @@ footer{
   main .p1 p {
     font-size: 1.4rem;
   }
-  main .p2{
+  main .p2 {
     background-color: #e17277;
     color: white;
-    box-shadow: 0 .2em .2rem rgba(0,0,0,0.5);
+    box-shadow: 0 0.2em 0.2rem rgba(0, 0, 0, 0.5);
   }
   main .p2 h2 {
     font-size: 1.5rem;
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.9); /* Adds a shadow to the text */
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.9); /* Adds a shadow to the text */
   }
   .faq {
     padding-top: 3px;
     padding-bottom: 5px;
     background-color: white;
     color: #593823;
-    box-shadow: 0 .2em .2rem rgba(0,0,0,0.5);
+    box-shadow: 0 0.2em 0.2rem rgba(0, 0, 0, 0.5);
   }
   .faq-title {
     font-size: 1.2rem;
@@ -479,7 +521,7 @@ footer{
     padding-bottom: 0;
     border-bottom: none;
   }
-  
+
   .menu-item .dishname {
     font-family: "Courier New", Courier, monospace;
     font-size: 1rem;
@@ -505,10 +547,10 @@ footer{
     /* color: #000; */
     height: 100%;
     padding: 3px 15px;
-    box-shadow: 0 .2em .2rem rgba(0,0,0,0.5);
+    box-shadow: 0 0.2em 0.2rem rgba(0, 0, 0, 0.5);
     border-radius: var(--border-radius-1);
   }
- 
+
   .toggle {
     font-size: 15px;
     height: 20px;
@@ -516,17 +558,17 @@ footer{
     top: 8px;
     right: 8px;
     padding: 10px 10px;
-    text-shadow: 0px 2px 4px rgba(0,0,0,1); 
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 1);
   }
   .toggle i {
-  font-size: 1.4rem;
-}
+    font-size: 1.4rem;
+  }
   main #checkout-btn {
     background-color: #e17277;
     color: white;
     padding: 0.8rem 0.1rem;
-    text-shadow: 0px 2px 4px rgba(0,0,0,1); 
-    box-shadow: 0 .2em .2rem rgba(0,0,0,0.5);
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 1);
+    box-shadow: 0 0.2em 0.2rem rgba(0, 0, 0, 0.5);
   }
 
   main #checkout-btn a {
