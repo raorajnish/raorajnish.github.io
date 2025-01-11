@@ -11,31 +11,43 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-   
+   <button id="checkout-btn">
+          <a href="#">Proceed to Cart<span class="cart-count">0</span></a>
+          
+      </button>
   <div class="container">
      <!-- Nav bar code start -->
+      
     <nav>
         <h2>ECell</h3>
         <h2>Food Fiesta</h3>
         <div class="nav-part2">
-
-            <a href="#" class="myorder phone-hide"><h3>My Orders</h3></a>
-            <div class="cart-btn"><a href="#"><i class="ri-shopping-cart-fill"></i></a>
-            <div class="cart-count">0</div>
-            </div>
+          <details>
+            <summary>
+              <i class="ri-menu-fold-fill"></i>
+            </summary>
+            <ul>
+              <li><i class="ri-restaurant-line"></i>Menu Page</li>
+              <li><i class="ri-shopping-bag-2-line">Past Orders</i></li>
+            </ul>
+          </details>
+            
+            <!-- <a href="#" class="myorder phone-hide"><h3>My Orders</h3></a>
+            <div class="cart-btn phone-hide" ><a href="#"><i class="ri-shopping-cart-fill"></i></a>
+            <div class="cart-count phone-hide">0</div>
             <div class="profile-btn phone-hide"><a href="#"><i class="ri-user-3-fill"></i></a></div>
             <div class="logout-btn phone-hide"><a href="#"><i class="ri-logout-box-r-line"></i></a></div>
 
             <details id="detail">
                 <summary>
-                    <i class="ri-user-3-fill"></i>
+                    <i class="ri-menu-fold-fill"></i>
                 </summary>
                 <ul>
-                    <li><a href="#" class=""><h3>My Orders</h3></a></li>
-                    <li><a href="#"><h3>Log Out</h3></a></li>
-                </ul>
-                
-            </details>
+                  <li><a href="#"><h3>Menu Page</h3></a></li>
+                  <li><a href="#"><h3>Past Orders</h3></a></li>
+                </ul>    
+            </details> -->
+
         </div>
       </nav>
     <!-- Nav bar code end -->
@@ -369,16 +381,19 @@
     <i class="ri-close-fill"></i>
   </button>
 </div>
-
   </div>
 </div>
 
-        <button id="checkout-btn">
-          <a href="#">Proceed to Cart</a>
-        </button>
-    </main>
-  </div>
+      <footer>
+        
+        <p>© Food Fiesta 2025 ECell SAKEC. <br>All rights reserved.</p>
+      </footer>
 
+
+
+    </main>
+    
+  </div>
     <script src="script.js"></script>
   </body>
 </html>
