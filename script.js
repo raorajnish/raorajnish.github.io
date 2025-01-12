@@ -25,46 +25,56 @@ document.addEventListener("DOMContentLoaded", function () {
       cartCountElement.textContent = cartCount;
     });
   });
-});
 
-const toggles = document.querySelectorAll(".toggle");
+  const toggles = document.querySelectorAll(".toggle");
 
-toggles.forEach((toggle) => {
-  toggle.addEventListener("click", () => {
-    toggle.parentNode.classList.toggle("active");
+  toggles.forEach((toggle) => {
+    toggle.addEventListener("click", () => {
+      toggle.parentNode.classList.toggle("active");
+    });
+  });
+
+  // Form validation with real-time input check
+  function validateName(name) {
+    return /^[a-zA-Z\s]+$/.test(name);
+  }
+
+  function validateEmail(email) {
+    return /^[a-zA-Z0-9._-]+@sakec\.ac\.in$/.test(email);
+  }
+
+  function validatePhone(phone) {
+    return /^[0-9]{10}$/.test(phone);
+  }
+
+  const nameInput = document.getElementById("name");
+  const emailInput = document.getElementById("email");
+  const phoneInput = document.getElementById("phone");
+
+  nameInput.addEventListener("input", function () {
+    if (validateName(nameInput.value)) {
+      document.getElementById("name-error").textContent = "";
+    } else {
+      document.getElementById("name-error").textContent =
+        "Please enter a valid name (letters and spaces only)";
+    }
+  });
+
+  emailInput.addEventListener("input", function () {
+    if (validateEmail(emailInput.value)) {
+      document.getElementById("email-error").textContent = "";
+    } else {
+      document.getElementById("email-error").textContent =
+        "Please enter a valid SAKEC email address";
+    }
+  });
+
+  phoneInput.addEventListener("input", function () {
+    if (validatePhone(phoneInput.value)) {
+      document.getElementById("phone-error").textContent = "";
+    } else {
+      document.getElementById("phone-error").textContent =
+        "Please enter a valid 10-digit phone number";
+    }
   });
 });
-
-// Form validation
-function validateForm() {
-    let isValid = true;
-    const nameInput = document.getElementById('name');
-    const emailInput = document.getElementById('email');
-    const phoneInput = document.getElementById('phone');
-
-    // Name validation
-    if (!validateName(nameInput.value)) {
-        document.getElementById('name-error').textContent = 'Please enter a valid name (letters and spaces only)';
-        isValid = false;
-    } else {
-        document.getElementById('name-error').textContent = '';
-    }
-
-    // Email validation
-    if (!validateEmail(emailInput.value)) {
-        document.getElementById('email-error').textContent = 'Please enter a valid SAKEC email address';
-        isValid = false;
-    } else {
-        document.getElementById('email-error').textContent = '';
-    }
-
-    // Phone validation
-    if (!validatePhone(phoneInput.value)) {
-        document.getElementById('phone-error').textContent = 'Please enter a valid 10-digit phone number';
-        isValid = false;
-    } else {
-        document.getElementById('phone-error').textContent = '';
-    }
-
-    return isValid;
-}
