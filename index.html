@@ -4,10 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: monospace;
+            padding: 20px;
+            text-align: left;
+        }
+
+        h3 {
+            margin-bottom: 10px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border: 1px solid #ccc;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+    </style>
 </head>
 <body>
-    <h3>
-        Family Tree:
+    <h3>Family Tree:</h3>
+    <pre><code>
 parent_of(helen, lily).
 parent_of(oliver,james).
 parent_of(sophie, james).
@@ -31,7 +52,7 @@ grandmother_of(X,Y):- female(X),
     parent_of(X,Z),
     parent_of(Z,Y).
 
-sister_of(X,Y):- %(X,Y or Y,X)%
+sister_of(X,Y):-
     female(X),
     father_of(F, Y), father_of(F,X),X \= Y.
 
@@ -41,7 +62,7 @@ sister_of(X,Y):- female(X),
 aunt_of(X,Y):- female(X),
     parent_of(Z,Y), sister_of(Z,X),!.
 
-brother_of(X,Y):- %(X,Y or Y,X)%
+brother_of(X,Y):-
     male(X),
     father_of(F, Y), father_of(F,X),X \= Y.
 
@@ -54,9 +75,10 @@ uncle_of(X,Y):-
 ancestor_of(X,Y):- parent_of(X,Y).
 ancestor_of(X,Y):- parent_of(X,Z),
     ancestor_of(Z,Y).
+    </code></pre>
 
-
-BFS:
+    <h3>BFS:</h3>
+    <pre><code>
 %connected(+Start, +Goal, -Weight)
 connected(1,7,1).
 connected(1,8,1).
@@ -71,6 +93,7 @@ connected(9,19,1).
 connected(4,42,1).
 connected(20,28,1).
 connected(17,10,1).
+
 connected2(X,Y,D) :- connected(X,Y,D).
 connected2(X,Y,D) :- connected(Y,X,D).
 
@@ -81,39 +104,35 @@ next_node(Current, Next, Path) :-
 breadth_first(Goal, Goal, _,[Goal]).
 breadth_first(Start, Goal, Visited, Path) :-
     findall(X,
-
-            (connected2(X,Start,_),not(member(X,Visited))),
-
-            [T|Extend]),
-
+        (connected2(X,Start,_),not(member(X,Visited))),
+        [T|Extend]),
     write(Visited), nl,
-
     append(Visited, [T|Extend], Visited2),
-
     append(Path, [T|Extend], [Next|Path2]),
-
     breadth_first(Next, Goal, Visited2, Path2).
+    </code></pre>
 
+    <h3>DFS:</h3>
+    <pre><code>
+solve(Node, Solution)  :-
+    depthfirst([], Node, Solution).
 
+depthfirst(Path, Node, [Node | Path])  :-
+    goal(Node).
 
-DFS:
+depthfirst(Path, Node, Sol)  :-
+    s(Node, Node1),
+    \+ member(Node1, Path),
+    depthfirst([Node | Path], Node1, Sol).
 
-solve( Node, Solution)  :-
-depthfirst( [], Node, Solution).
-depthfirst( Path, Node, [Node | Path] )  :-
+depthfirst2(Node, [Node], _)  :-
+    goal(Node).
 
-goal( Node).
-depthfirst( Path, Node, Sol)  :-
-s( Node, Node1),
-  \+ member( Node1, Path),                
-depthfirst( [Node | Path], Node1, Sol).
-depthfirst2( Node, [Node], _)  :-
-goal( Node).
-depthfirst2( Node, [Node | Sol], Maxdepth)  :-
-Maxdepth> 0,
-s( Node, Node1),
-   Max1 is Maxdepth - 1,
-   depthfirst2( Node1, Sol, Max1).
+depthfirst2(Node, [Node | Sol], Maxdepth)  :-
+    Maxdepth > 0,
+    s(Node, Node1),
+    Max1 is Maxdepth - 1,
+    depthfirst2(Node1, Sol, Max1).
 
 goal(f).
 goal(j).
@@ -126,8 +145,10 @@ s(c,g).
 s(d,h).
 s(e,i).
 s(e,j).
+    </code></pre>
 
-A*:
+    <h3>A*:</h3>
+    <pre><code>
 edge(a, b, 2).
 edge(a, c, 3).
 edge(b, c, 1).
@@ -152,9 +173,6 @@ astar(Start, Goal, Visited, Path, Cost, AccCost) :-
         Cost = NewCost
     ;   astar(Next, Goal, NewVisited, Path, Cost, NewCost)
     ).
-
-
-
-    </h3>
+    </code></pre>
 </body>
 </html>
