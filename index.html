@@ -1,420 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Food Fiesta</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-   <button id="checkout-btn">
-          <a href="#">Proceed to Cart<span class="cart-count">0</span></a>
-          
-      </button>
-  <div class="container">
-     <!-- Nav bar code start -->
-      
-    <nav>
-        <h2>ECell</h3>
-        <h2>Food Fiesta</h3>
-        <div class="nav-part2">
-          
-          <details>
-            <summary>
-              <i class="ri-menu-fold-fill"></i>
-            </summary>
-            <ul>
-              <li><i class="ri-restaurant-line"></i>Menu Page</li>
-              <li><i class="ri-shopping-bag-2-line">Past Orders</i></li>
-            </ul>
-          </details>
-            
-            <!-- <a href="#" class="myorder phone-hide"><h3>My Orders</h3></a>
-            <div class="cart-btn phone-hide" ><a href="#"><i class="ri-shopping-cart-fill"></i></a>
-            <div class="cart-count phone-hide">0</div>
-            <div class="profile-btn phone-hide"><a href="#"><i class="ri-user-3-fill"></i></a></div>
-            <div class="logout-btn phone-hide"><a href="#"><i class="ri-logout-box-r-line"></i></a></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>
+        Family Tree:
+parent_of(helen, lily).
+parent_of(oliver,james).
+parent_of(sophie, james).
+parent_of(jess, simon).
+parent_of(ali, simon).
+parent_of(lily, harry).
+parent_of(james, harry).
 
-            <details id="detail">
-                <summary>
-                    <i class="ri-menu-fold-fill"></i>
-                </summary>
-                <ul>
-                  <li><a href="#"><h3>Menu Page</h3></a></li>
-                  <li><a href="#"><h3>Past Orders</h3></a></li>
-                </ul>    
-            </details> -->
+/* Rules */
+father_of(X,Y):- male(X),
+    parent_of(X,Y).
 
-        </div>
-      </nav>
-    <!-- Nav bar code end -->
-    <!-- Main div code start -->
-    <main class="hero">
-        <div class="p1">
-          <h1>Welcome to <span>Food Fiesta!</span></h1>
-          <p>Discover the best food!</p>
-          <img class="p1-img"  src="img/img2.png" alt="">
-        </div>
+mother_of(X,Y):- female(X),
+    parent_of(X,Y).
 
-  <div class="p2">
-  <h2>Food Stalls</h2>
+grandfather_of(X,Y):- male(X),
+    parent_of(X,Z),
+    parent_of(Z,Y).
 
-  <div class="shops">
-    <div class="faq">
-      <h3 class="faq-title">
-        Shop 1
-      </h3>
-      <div class="faq-text">
-        <div class="menu-item">
-          <div class="dishname">Spaghetti Bolognese</div>
-          <div class="item-part">
-            <div class="price">₹99</div>
-            <button class="addtocartbtn">Add to Cart</button>
-          </div>
-        </div>
-        <div class="menu-item">
-          <div class="dishname">Chicken Alfredo</div>
-          <div class="item-part">
-            <div class="price">₹149</div>
-            <button class="addtocartbtn">Add to Cart</button>
-          </div>
-        </div>
-        <div class="menu-item">
-          <div class="dishname">Caesar Salad</div>
-          <div class="item-part">
-            <div class="price">₹79</div>
-            <button class="addtocartbtn">Add to Cart</button>
-          </div>
-        </div>
-        <div class="menu-item">
-          <div class="dishname">Garlic Bread</div>
-          <div class="item-part">
-            <div class="price">₹69</div>
-            <button class="addtocartbtn">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-      <button class="toggle">
-        <i class="ri-arrow-drop-down-line"></i>
-        <i class="ri-close-fill"></i>
-      </button>
-    </div>
+grandmother_of(X,Y):- female(X),
+    parent_of(X,Z),
+    parent_of(Z,Y).
 
-    <div class="faq">
-      <h3 class="faq-title">
-        Shop 2
-      </h3>
-      <div class="faq-text">
-        <div class="menu-item">
-          <div class="dishname">Pepperoni Pizza</div>
-          <div class="item-part">
-            <div class="price">₹249</div>
-            <button class="addtocartbtn">Add to Cart</button>
-          </div>
-        </div>
-        <div class="menu-item">
-          <div class="dishname">Veggie Pizza</div>
-          <div class="item-part">
-            <div class="price">₹299</div>
-            <button class="addtocartbtn">Add to Cart</button>
-          </div>
-        </div>
-        <div class="menu-item">
-          <div class="dishname">BBQ Chicken Wings</div>
-          <div class="item-part">
-            <div class="price">₹199</div>
-            <button class="addtocartbtn">Add to Cart</button>
-          </div>
-        </div>
-        <div class="menu-item">
-          <div class="dishname">Garlic Knots</div>
-          <div class="item-part">
-            <div class="price">₹119</div>
-            <button class="addtocartbtn">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-      <button class="toggle">
-        <i class="ri-arrow-drop-down-line"></i>
-        <i class="ri-close-fill"></i>
-      </button>
-    </div>
+sister_of(X,Y):- %(X,Y or Y,X)%
+    female(X),
+    father_of(F, Y), father_of(F,X),X \= Y.
 
-    <div class="faq">
-      <h3 class="faq-title">
-        Shop 3
-      </h3>
-      <div class="faq-text">
-        <div class="menu-item">
-          <div class="dishname">Sushi Roll</div>
-          <div class="item-part">
-            <div class="price">₹59</div>
-            <button class="addtocartbtn">Add to Cart</button>
-          </div>
-        </div>
-        <div class="menu-item">
-          <div class="dishname">Tempura</div>
-          <div class="item-part">
-            <div class="price">₹99</div>
-            <button class="addtocartbtn">Add to Cart</button>
-          </div>
-        </div>
-        <div class="menu-item">
-          <div class="dishname">Ramen</div>
-          <div class="item-part">
-            <div class="price">₹119</div>
-            <button class="addtocartbtn">Add to Cart</button>
-          </div>
-        </div>
-        <div class="menu-item">
-          <div class="dishname">Miso Soup</div>
-          <div class="item-part">
-            <div class="price">₹79</div>
-            <button class="addtocartbtn">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-      <button class="toggle">
-        <i class="ri-arrow-drop-down-line"></i>
-        <i class="ri-close-fill"></i>
-      </button>
-    </div>
+sister_of(X,Y):- female(X),
+    mother_of(M, Y), mother_of(M,X),X \= Y.
 
-    <div class="faq">
-  <h3 class="faq-title">
-    Shop 4
-  </h3>
-  <div class="faq-text">
-    <div class="menu-item">
-      <div class="dishname">Tacos</div>
-      <div class="item-part">
-        <div class="price">₹59</div>
-        <button class="addtocartbtn">Add to Cart</button>
-      </div>
-    </div>
-    <div class="menu-item">
-      <div class="dishname">Burrito</div>
-      <div class="item-part">
-        <div class="price">₹99</div>
-        <button class="addtocartbtn">Add to Cart</button>
-      </div>
-    </div>
-    <div class="menu-item">
-      <div class="dishname">Quesadilla</div>
-      <div class="item-part">
-        <div class="price">₹189</div>
-        <button class="addtocartbtn">Add to Cart</button>
-      </div>
-    </div>
-    <div class="menu-item">
-      <div class="dishname">Nachos</div>
-      <div class="item-part">
-        <div class="price">₹119</div>
-        <button class="addtocartbtn">Add to Cart</button>
-      </div>
-    </div>
-  </div>
-  <button class="toggle">
-    <i class="ri-arrow-drop-down-line"></i>
-    <i class="ri-close-fill"></i>
-  </button>
-</div>
+aunt_of(X,Y):- female(X),
+    parent_of(Z,Y), sister_of(Z,X),!.
 
-<div class="faq">
-  <h3 class="faq-title">
-    Shop 5
-  </h3>
-  <div class="faq-text">
-    <div class="menu-item">
-      <div class="dishname">Hamburger</div>
-      <div class="item-part">
-        <div class="price">₹59</div>
-        <button class="addtocartbtn">Add to Cart</button>
-      </div>
-    </div>
-    <div class="menu-item">
-      <div class="dishname">Cheeseburger</div>
-      <div class="item-part">
-        <div class="price">₹99</div>
-        <button class="addtocartbtn">Add to Cart</button>
-      </div>
-    </div>
-    <div class="menu-item">
-      <div class="dishname">Chicken Sandwich</div>
-      <div class="item-part">
-        <div class="price">₹139</div>
-        <button class="addtocartbtn">Add to Cart</button>
-      </div>
-    </div>
-    <div class="menu-item">
-      <div class="dishname">French Fries</div>
-      <div class="item-part">
-        <div class="price">₹69</div>
-        <button class="addtocartbtn">Add to Cart</button>
-      </div>
-    </div>
-  </div>
-  <button class="toggle">
-    <i class="ri-arrow-drop-down-line"></i>
-    <i class="ri-close-fill"></i>
-  </button>
-</div>
+brother_of(X,Y):- %(X,Y or Y,X)%
+    male(X),
+    father_of(F, Y), father_of(F,X),X \= Y.
 
-<div class="faq">
-  <h3 class="faq-title">
-    Shop 6
-  </h3>
-  <div class="faq-text">
-    <div class="menu-item">
-      <div class="dishname">Samosa</div>
-      <div class="item-part">
-        <div class="price">₹19</div>
-        <button class="addtocartbtn">Add to Cart</button>
-      </div>
-    </div>
-    <div class="menu-item">
-      <div class="dishname">Chaat</div>
-      <div class="item-part">
-        <div class="price">₹39</div>
-        <button class="addtocartbtn">Add to Cart</button>
-      </div>
-    </div>
-    <div class="menu-item">
-      <div class="dishname">Paneer Tikka</div>
-      <div class="item-part">
-        <div class="price">₹79</div>
-        <button class="addtocartbtn">Add to Cart</button>
-      </div>
-    </div>
-    <div class="menu-item">
-      <div class="dishname">Butter Chicken</div>
-      <div class="item-part">
-        <div class="price">₹219</div>
-        <button class="addtocartbtn">Add to Cart</button>
-      </div>
-    </div>
-  </div>
-  <button class="toggle">
-    <i class="ri-arrow-drop-down-line"></i>
-    <i class="ri-close-fill"></i>
-  </button>
-</div>
+brother_of(X,Y):- male(X),
+    mother_of(M, Y), mother_of(M,X),X \= Y.
 
-<div class="faq">
-  <h3 class="faq-title">
-    Shop 7
-  </h3>
-  <div class="faq-text">
-    <div class="menu-item">
-      <div class="dishname">Dim Sum</div>
-      <div class="item-part">
-        <div class="price">₹259</div>
-        <button class="addtocartbtn">Add to Cart</button>
-      </div>
-    </div>
-    <div class="menu-item">
-      <div class="dishname">Sweet and Sour Chicken</div>
-      <div class="item-part">
-        <div class="price">₹349</div>
-        <button class="addtocartbtn">Add to Cart</button>
-      </div>
-    </div>
-    <div class="menu-item">
-      <div class="dishname">Kung Pao Shrimp</div>
-      <div class="item-part">
-        <div class="price">₹329</div>
-        <button class="addtocartbtn">Add to Cart</button>
-      </div>
-    </div>
-    <div class="menu-item">
-      <div class="dishname">Spring Rolls</div>
-      <div class="item-part">
-        <div class="price">₹219</div>
-        <button class="addtocartbtn">Add to Cart</button>
-      </div>
-    </div>
-  </div>
-  <button class="toggle">
-    <i class="ri-arrow-drop-down-line"></i>
-    <i class="ri-close-fill"></i>
-  </button>
-</div>
+uncle_of(X,Y):-
+    parent_of(Z,Y), brother_of(Z,X).
 
-<div class="faq">
-  <h3 class="faq-title">
-    Shop 8
-  </h3>
-  <div class="faq-text">
-    <div class="menu-item">
-      <div class="dishname">Ice Cream Sundae</div>
-      <div class="item-part">
-        <div class="price">₹189</div>
-        <button class="addtocartbtn">Add to Cart</button>
-      </div>
-    </div>
-    <div class="menu-item">
-      <div class="dishname">Chocolate Cake</div>
-      <div class="item-part">
-        <div class="price">₹459</div>
-        <button class="addtocartbtn">Add to Cart</button>
-      </div>
-    </div>
-    <div class="menu-item">
-      <div class="dishname">Cheesecake</div>
-      <div class="item-part">
-        <div class="price">₹369</div>
-        <button class="addtocartbtn">Add to Cart</button>
-      </div>
-    </div>
-    <div class="menu-item">
-      <div class="dishname">Fruit Salad</div>
-      <div class="item-part">
-        <div class="price">₹139</div>
-        <button class="addtocartbtn">Add to Cart</button>
-      </div>
-    </div>
-  </div>
-  <button class="toggle">
-    <i class="ri-arrow-drop-down-line"></i>
-    <i class="ri-close-fill"></i>
-  </button>
-</div>
-</div>
-<!-- shop part end here -->
- <!-- User Details Form -->
-                <div class="user-details-form">
-                    <h2>Enter Your Details</h2>
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" placeholder="Enter your name" required>
-                        <span class="error-message" id="name-error"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" placeholder="Enter your SAKEC email" required>
-                        <span class="error-message" id="email-error"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" placeholder="Enter 10-digit phone number" required>
-                        <span class="error-message" id="phone-error"></span>
-                    </div>
-                </div>
-
-</div>
+ancestor_of(X,Y):- parent_of(X,Y).
+ancestor_of(X,Y):- parent_of(X,Z),
+    ancestor_of(Z,Y).
 
 
-    </main>
-    <footer>
-        
-        <p>© Food Fiesta 2025 ECell SAKEC. <br>All rights reserved.</p>
-      </footer>
-    
-  </div>
-    <script src="script.js"></script>
-  </body>
+BFS:
+%connected(+Start, +Goal, -Weight)
+connected(1,7,1).
+connected(1,8,1).
+connected(1,3,1).
+connected(7,4,1).
+connected(7,20,1).
+connected(7,17,1).
+connected(8,6,1).
+connected(3,9,1).
+connected(3,12,1).
+connected(9,19,1).
+connected(4,42,1).
+connected(20,28,1).
+connected(17,10,1).
+connected2(X,Y,D) :- connected(X,Y,D).
+connected2(X,Y,D) :- connected(Y,X,D).
+
+next_node(Current, Next, Path) :-
+    connected2(Current, Next, _),
+    not(member(Next, Path)).
+
+breadth_first(Goal, Goal, _,[Goal]).
+breadth_first(Start, Goal, Visited, Path) :-
+    findall(X,
+
+            (connected2(X,Start,_),not(member(X,Visited))),
+
+            [T|Extend]),
+
+    write(Visited), nl,
+
+    append(Visited, [T|Extend], Visited2),
+
+    append(Path, [T|Extend], [Next|Path2]),
+
+    breadth_first(Next, Goal, Visited2, Path2).
+
+
+
+DFS:
+
+solve( Node, Solution)  :-
+depthfirst( [], Node, Solution).
+depthfirst( Path, Node, [Node | Path] )  :-
+
+goal( Node).
+depthfirst( Path, Node, Sol)  :-
+s( Node, Node1),
+  \+ member( Node1, Path),                
+depthfirst( [Node | Path], Node1, Sol).
+depthfirst2( Node, [Node], _)  :-
+goal( Node).
+depthfirst2( Node, [Node | Sol], Maxdepth)  :-
+Maxdepth> 0,
+s( Node, Node1),
+   Max1 is Maxdepth - 1,
+   depthfirst2( Node1, Sol, Max1).
+
+goal(f).
+goal(j).
+s(a,b).
+s(a,c).
+s(b,d).
+s(b,e).
+s(c,f).
+s(c,g).
+s(d,h).
+s(e,i).
+s(e,j).
+
+A*:
+edge(a, b, 2).
+edge(a, c, 3).
+edge(b, c, 1).
+edge(b, d, 4).
+edge(c, d, 2).
+
+heuristic(a, d, 6).
+heuristic(b, d, 4).
+heuristic(c, d, 2).
+heuristic(d, d, 0).
+
+astar(Start, Goal, Path, Cost) :-
+    astar(Start, Goal, [Start], Path, Cost, 0).
+
+astar(Start, Goal, Visited, Path, Cost, AccCost) :-
+    edge(Start, Next, EdgeCost),
+    \+ member(Next, Visited),
+    NewCost is AccCost + EdgeCost,
+    NewVisited = [Next|Visited],
+    (   Next = Goal
+    ->  Path = NewVisited,
+        Cost = NewCost
+    ;   astar(Next, Goal, NewVisited, Path, Cost, NewCost)
+    ).
+
+
+
+    </h3>
+</body>
 </html>
